@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "포트폴리오 갱신을 위한 프로젝트",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FroKCreativeTM/portfolio.git"
+  },
+  "author": "ChaSeungCheol",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FroKCreativeTM/portfolio/issues"
+  },
+  "homepage": "https://github.com/FroKCreativeTM/portfolio#readme"
+}
