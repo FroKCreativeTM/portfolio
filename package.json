@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "nunjucks": "^3.2.3"
   },
   "name": "portfolio",
   "version": "1.0.0",
@@ -10,7 +11,7 @@
     "nodemon": "^2.0.13"
   },
   "scripts": {
-    "start" : "nodemon start",
+    "start": "nodemon start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
