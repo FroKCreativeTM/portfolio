@@ -1,20 +1,369 @@
-/* root */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
 html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: #000000;
+}
+body * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+#preload {
+  display: none;
+}
+
+body * {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+/* header */
+header 
+{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #001300;
+  animation : changeColor 5s linear infinite;
+}
+
+@keyframes changeColor {
+  0% 
+  {
+    fliter : hue-rotate(0deg);
+  }
+  100%
+  {
+    fliter : hue-rotate(300deg);
+  }
+}
+
+header h2 
+{
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 10px;
+}
+
+header .title 
+{
+  position: relative;
+  display: flex;
+}
+
+header .title .dot
+{
+  position: relative;
+  display: block;
+  width: 20px;
+  height : 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px #fff,
+              0 0 20px #fff,
+              0 0 40px #fff,
+              0 0 60px #fff,
+              0 0 80px #fff,
+              0 0 100px #fff;
+  margin: 20px 10px;
+  transform: scale(0.1);
+  border-radius: 50%;
+  animation : animateDot 2s linear infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+header .title:last-child .dot
+{
+  animation-delay: calc(-0.1s * var(--i));
+}
+
+@keyframes animateDot {
+  0%
+  {
+    transform: scale(0.1);
+  }
+  10% 
+  {
+    transform: scale(1);
+  }
+  50%, 100% 
+  {
+    transform: scale(0.1);
+  }
+}
+
+/*  */
+.menu_bar 
+{
+  position: absolute;
+  -js-display: flex;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #161c24;
+  z-index: 10000;
+  border-bottom: 3px solid #4ad7d1;
+}
+
+.menu_bar .menu_button 
+{
+  display: none;
+}
+
+.menu_bar .menu_container
+{
+  position: relative;
+  -js-display: flex;
+  display: flex;
+  padding-left: 5%;
+  width: 100%;
+  height: 100%;
+}
+
+.menu_bar .menu_item
+ {
+  -js-display: flex;
+  display: flex;
+  align-items: center;
+  margin-right: 5%;
+  font-size: 1.1em;
+  font-weight: 400;
+  color: white;
+}
+
+.menu_bar .menu_item:hover 
+{
+  cursor: pointer;
+}
+
+/* js 부분 */
+.skill-card-js
+{
+  position: relative;
+  width: 600px;
+  height: 350px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+.skill-card-js .skill-card-circle
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.skill-card-js .skill-card-circle::before
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffd400;
+  clip-path: circle(120px at center);
+  transition: 0.5s;
+}
+
+.skill-card-js:hover .skill-card-circle:before
+{
+  background-color: #B8860B;
+  clip-path: circle(400px at center);
+}
+
+.skill-card-js img 
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 175px;
+  height: 175px;
+  pointer-events: none;
+  transition: 00.5s;
+}
+
+.skill-card-js:hover img 
+{
+  left: 72%;
+  width: 250px;
+  height: 250px;
+}
+
+/* nodejs 부분 */
+.skill-card-node
+{
+  position: relative;
+  width: 600px;
+  height: 350px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+.skill-card-node .skill-card-circle
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.skill-card-node .skill-card-circle::before
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #9DD84B;
+  clip-path: circle(120px at center);
+  transition: 0.5s;
+}
+
+.skill-card-node:hover .skill-card-circle:before
+{
+  background-color: #81C147;
+  clip-path: circle(400px at center);
+}
+
+.skill-card-node img 
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 175px;
+  height: 175px;
+  pointer-events: none;
+  transition: 00.5s;
+}
+
+.skill-card-node:hover img 
+{
+  left: 72%;
+  width: 250px;
+  height: 250px;
+}
+
+
+/* 스킬 카드 컨텐츠 부분 */
+.skill-card-content
+{
+  position : relative;
+  width: 50%;
+  left: 20%;
+  padding: 20px 20px 20px 40px;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.skill-card-js:hover .skill-card-content
+{
+  left: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+.skill-card-node:hover .skill-card-content
+{
+  left: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+.skill-card-content h2
+{
+  color: #fff;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 2em;
+  line-height: 1em;
+}
+
+.skill-card-content p
+{
+  color: #fff;
+}
+
+.skill-card-content ul li
+{
+  color: #fff;
+}
+
+.skill-card-content a
+{
+  position: relative;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #111;
+  margin-top: 10px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/*
+@media (max-width:991px)
+{
+  .skill-card
+  {
+    width: auto;
+    max-width: 350px;
+    align-items: flex-start;
+    margin: 10px;
+  }
+  .skill-card:hover
+  {
+    height: 600px;
+  }
+  .skill-card .skill-card-content
+  {
     width: 100%;
-    height: 100%;
+    left: 0;
+    padding: 30px;
   }
-  body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
+
+  .skill-card img
+  {
+    top: 70%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
   }
-  body * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+}
+
+@media (max-width:42px)
+{
+  .skill-card .skill-card-content
+  {
+    padding: 20px;
   }
-  #preload {
-    display: none;
-  }
+}
+*/
