@@ -13,6 +13,7 @@
   "description": "포트폴리오 갱신을 위한 프로젝트",
   "main": "app.js",
   "devDependencies": {
+    "font-awesome": "^4.7.0",
     "nodemon": "^2.0.13"
   },
   "scripts": {

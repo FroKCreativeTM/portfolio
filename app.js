@@ -36,6 +36,9 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use('/fa', express.static(__dirname + '/node_modules/font-awesome/css'));
+app.use('/fonts', express.static(__dirname + '/node_modules/font-awesome/fonts'));
+
 app.use('/', indexRouter);
 
 // 라우터나 미들웨어가 여기까지 닿으면, 정상적인 부분은 아니다

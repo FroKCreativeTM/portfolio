@@ -1,4 +1,6 @@
+/* import */
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+
 html {
   width: 100%;
   height: 100%;
@@ -34,7 +36,7 @@ header
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #001300;
+  background-color: linear-gradient(#001300, black);
   animation : changeColor 5s linear infinite;
 }
 
@@ -149,8 +151,14 @@ header .title:last-child .dot
   cursor: pointer;
 }
 
-/* js 부분 */
-.skill-card-js
+section .skill 
+{
+  position: relative;
+  float: left;
+}
+
+/* 전반적인 스킬 카드 */
+.skill-card
 {
   position: relative;
   width: 600px;
@@ -161,7 +169,9 @@ header .title:last-child .dot
   border-radius: 20px;
   transition: 0.5s;
 }
-.skill-card-js .skill-card-circle
+
+/* js 부분 */
+.skill-card#js .skill-card-circle
 {
   position: absolute;
   top: 0;
@@ -171,7 +181,7 @@ header .title:last-child .dot
   border-radius: 20px;
   overflow: hidden;
 }
-.skill-card-js .skill-card-circle::before
+.skill-card#js .skill-card-circle::before
 {
   content: '';
   position: absolute;
@@ -184,13 +194,13 @@ header .title:last-child .dot
   transition: 0.5s;
 }
 
-.skill-card-js:hover .skill-card-circle:before
+.skill-card#js:hover .skill-card-circle:before
 {
   background-color: #B8860B;
   clip-path: circle(400px at center);
 }
 
-.skill-card-js img 
+.skill-card#js img 
 {
   position: absolute;
   top: 50%;
@@ -202,7 +212,7 @@ header .title:last-child .dot
   transition: 00.5s;
 }
 
-.skill-card-js:hover img 
+.skill-card#js:hover img 
 {
   left: 72%;
   width: 250px;
@@ -210,18 +220,7 @@ header .title:last-child .dot
 }
 
 /* nodejs 부분 */
-.skill-card-node
-{
-  position: relative;
-  width: 600px;
-  height: 350px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  border-radius: 20px;
-  transition: 0.5s;
-}
-.skill-card-node .skill-card-circle
+.skill-card#nodejs .skill-card-circle
 {
   position: absolute;
   top: 0;
@@ -231,7 +230,7 @@ header .title:last-child .dot
   border-radius: 20px;
   overflow: hidden;
 }
-.skill-card-node .skill-card-circle::before
+.skill-card#nodejs .skill-card-circle::before
 {
   content: '';
   position: absolute;
@@ -244,13 +243,13 @@ header .title:last-child .dot
   transition: 0.5s;
 }
 
-.skill-card-node:hover .skill-card-circle:before
+.skill-card#nodejs:hover .skill-card-circle:before
 {
   background-color: #81C147;
   clip-path: circle(400px at center);
 }
 
-.skill-card-node img 
+.skill-card#nodejs img 
 {
   position: absolute;
   top: 50%;
@@ -262,13 +261,110 @@ header .title:last-child .dot
   transition: 00.5s;
 }
 
-.skill-card-node:hover img 
+.skill-card#nodejs:hover img 
 {
   left: 72%;
   width: 250px;
   height: 250px;
 }
 
+/* aws 부분 */
+.skill-card#aws .skill-card-circle
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.skill-card#aws .skill-card-circle::before
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #dbce1a;
+  clip-path: circle(120px at center);
+  transition: 0.5s;
+}
+
+.skill-card#aws:hover .skill-card-circle:before
+{
+  background-color: #a09e82;
+  clip-path: circle(400px at center);
+}
+
+.skill-card#aws img 
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 175px;
+  height: 175px;
+  pointer-events: none;
+  transition: 00.5s;
+}
+
+.skill-card#aws:hover img 
+{
+  left: 72%;
+  width: 250px;
+  height: 250px;
+}
+
+/* linux 부분 */
+.skill-card#linux .skill-card-circle
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.skill-card#linux .skill-card-circle::before
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #7F2E50;
+  clip-path: circle(120px at center);
+  transition: 0.5s;
+}
+
+.skill-card#linux:hover .skill-card-circle:before
+{
+  background-color: #F66009;
+  clip-path: circle(400px at center);
+}
+
+.skill-card#linux img 
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 175px;
+  height: 175px;
+  pointer-events: none;
+  transition: 00.5s;
+}
+
+.skill-card#linux:hover img 
+{
+  left: 72%;
+  width: 250px;
+  height: 250px;
+}
 
 /* 스킬 카드 컨텐츠 부분 */
 .skill-card-content
@@ -282,14 +378,28 @@ header .title:last-child .dot
   visibility: hidden;
 }
 
-.skill-card-js:hover .skill-card-content
+.skill-card#js:hover .skill-card-content
 {
   left: 0;
   opacity: 1;
   visibility: visible;
 }
 
-.skill-card-node:hover .skill-card-content
+.skill-card#nodejs:hover .skill-card-content
+{
+  left: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+.skill-card#aws:hover .skill-card-content
+{
+  left: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+.skill-card#linux:hover .skill-card-content
 {
   left: 0;
   opacity: 1;
@@ -329,41 +439,86 @@ header .title:last-child .dot
   font-weight: 700;
 }
 
-/*
-@media (max-width:991px)
+/* footer */
+footer 
 {
-  .skill-card
-  {
-    width: auto;
-    max-width: 350px;
-    align-items: flex-start;
-    margin: 10px;
-  }
-  .skill-card:hover
-  {
-    height: 600px;
-  }
-  .skill-card .skill-card-content
-  {
-    width: 100%;
-    left: 0;
-    padding: 30px;
-  }
-
-  .skill-card img
-  {
-    top: 70%;
-    left: 50%;
-    width: 150px;
-    height: 150px;
-  }
+  position: absolute; 
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (max-width:42px)
+footer::before
 {
-  .skill-card .skill-card-content
-  {
-    padding: 20px;
-  }
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  z-index: 1;
+  backdrop-filter: blue(5px);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
 }
-*/
+
+footer ul 
+{
+  position: relative;
+  display: flex;
+  z-index: 2;
+}
+
+footer ul li
+{
+  position: relative;
+  list-style: none;
+  margin: 10px;
+}
+
+footer ul li a
+{
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 2em;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 5px 45px rgba(100, 100, 100, 0.2);
+  backdrop-filter: blur(2px);
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+footer ul li a:hover
+{
+  transform: translateY(-20px);
+}
+
+footer ul li a::before
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: skewX(45deg) translateX(150px);
+  transition: 0.5s;
+}
+
+footer ul li a::before:hover
+{
+  transform: skewX(45deg) translateX(-150px);
+}
+
+
+
