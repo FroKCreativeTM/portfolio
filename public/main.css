@@ -11,7 +11,7 @@ body {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
-  background-color: #000000;
+  background-color: #161623;
 }
 body * {
   box-sizing: border-box;
@@ -151,37 +151,16 @@ header .title:last-child .dot
   cursor: pointer;
 }
 
-section .skill 
+/* skill 파트 */
+.skill 
 {
-  position: relative;
-  float: left;
-}
-
-/* 전반적인 스킬 카드 */
-.skill-card
-{
-  position: relative;
-  width: 600px;
-  height: 350px;
-  border-radius: 20px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  border-radius: 20px;
-  transition: 0.5s;
+  min-height: 100vh;
 }
 
-/* js 부분 */
-.skill-card#js .skill-card-circle
-{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  overflow: hidden;
-}
-.skill-card#js .skill-card-circle::before
+.skill::before
 {
   content: '';
   position: absolute;
@@ -189,48 +168,11 @@ section .skill
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #ffd400;
-  clip-path: circle(120px at center);
-  transition: 0.5s;
+  background-color: linear-gradient(#f00, #f0f);
+  clip-path: circle(30% at right 70%);
 }
 
-.skill-card#js:hover .skill-card-circle:before
-{
-  background-color: #B8860B;
-  clip-path: circle(400px at center);
-}
-
-.skill-card#js img 
-{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 175px;
-  height: 175px;
-  pointer-events: none;
-  transition: 00.5s;
-}
-
-.skill-card#js:hover img 
-{
-  left: 72%;
-  width: 250px;
-  height: 250px;
-}
-
-/* nodejs 부분 */
-.skill-card#nodejs .skill-card-circle
-{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  overflow: hidden;
-}
-.skill-card#nodejs .skill-card-circle::before
+.skill::after
 {
   content: '';
   position: absolute;
@@ -238,205 +180,70 @@ section .skill
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #9DD84B;
-  clip-path: circle(120px at center);
-  transition: 0.5s;
+  background-color: linear-gradient(#2196f3, #e91e63);
+  clip-path: circle(20% at 10% 10%);
 }
 
-.skill-card#nodejs:hover .skill-card-circle:before
-{
-  background-color: #81C147;
-  clip-path: circle(400px at center);
-}
-
-.skill-card#nodejs img 
-{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 175px;
-  height: 175px;
-  pointer-events: none;
-  transition: 00.5s;
-}
-
-.skill-card#nodejs:hover img 
-{
-  left: 72%;
-  width: 250px;
-  height: 250px;
-}
-
-/* aws 부분 */
-.skill-card#aws .skill-card-circle
-{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  overflow: hidden;
-}
-.skill-card#aws .skill-card-circle::before
-{
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #dbce1a;
-  clip-path: circle(120px at center);
-  transition: 0.5s;
-}
-
-.skill-card#aws:hover .skill-card-circle:before
-{
-  background-color: #a09e82;
-  clip-path: circle(400px at center);
-}
-
-.skill-card#aws img 
-{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 175px;
-  height: 175px;
-  pointer-events: none;
-  transition: 00.5s;
-}
-
-.skill-card#aws:hover img 
-{
-  left: 72%;
-  width: 250px;
-  height: 250px;
-}
-
-/* linux 부분 */
-.skill-card#linux .skill-card-circle
-{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  overflow: hidden;
-}
-.skill-card#linux .skill-card-circle::before
-{
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #7F2E50;
-  clip-path: circle(120px at center);
-  transition: 0.5s;
-}
-
-.skill-card#linux:hover .skill-card-circle:before
-{
-  background-color: #F66009;
-  clip-path: circle(400px at center);
-}
-
-.skill-card#linux img 
-{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 175px;
-  height: 175px;
-  pointer-events: none;
-  transition: 00.5s;
-}
-
-.skill-card#linux:hover img 
-{
-  left: 72%;
-  width: 250px;
-  height: 250px;
-}
-
-/* 스킬 카드 컨텐츠 부분 */
-.skill-card-content
+.container 
 {
   position : relative;
-  width: 50%;
-  left: 20%;
-  padding: 20px 20px 20px 40px;
-  transition: 0.5s;
-  opacity: 0;
-  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1500px;
+  flex-wrap: wrap;
+  z-index: 1;
 }
 
-.skill-card#js:hover .skill-card-content
-{
-  left: 0;
-  opacity: 1;
-  visibility: visible;
-}
-
-.skill-card#nodejs:hover .skill-card-content
-{
-  left: 0;
-  opacity: 1;
-  visibility: visible;
-}
-
-.skill-card#aws:hover .skill-card-content
-{
-  left: 0;
-  opacity: 1;
-  visibility: visible;
-}
-
-.skill-card#linux:hover .skill-card-content
-{
-  left: 0;
-  opacity: 1;
-  visibility: visible;
-}
-
-.skill-card-content h2
-{
-  color: #fff;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  font-size: 2em;
-  line-height: 1em;
-}
-
-.skill-card-content p
-{
-  color: #fff;
-}
-
-.skill-card-content ul li
-{
-  color: #fff;
-}
-
-.skill-card-content a
+.container .card
 {
   position: relative;
+  width: 300px;
+  height: 400px;
+  margin: 30px;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.container .card .content 
+{
+  padding: 20px;
+  text-align: center;
+  transition: 0.5S;
+}
+
+.container .card .content img
+{
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 10px;
+  right: 30px;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.container .card .content h2
+{
+  font-size: 1.8em;
   color: #fff;
-  padding: 10px 20px;
-  border-radius: 10px;
-  background-color: #fff;
-  color: #111;
-  margin-top: 10px;
-  display: inline-block;
-  text-decoration: none;
-  font-weight: 700;
+  z-index: 1;
+}
+
+.container .card .content ul li
+{
+  list-style:none;
+  font-size: 1em;
+  color: #fff;
+  font-weight: 300;
 }
 
 /* footer */
@@ -519,6 +326,3 @@ footer ul li a::before:hover
 {
   transform: skewX(45deg) translateX(-150px);
 }
-
-
-
