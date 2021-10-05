@@ -57,6 +57,7 @@
                 <div class="dot" style="--i:19;"></div>
             </div>
         </header>
+        <hr size="1px" color = "white">
         <section class="my_info">
             <article class="content">
                 <nav class="menu_bar" style="position: absolute;">
@@ -79,6 +80,7 @@
                 </nav>
             </article>
         </section>
+        <hr size="1px" color = "white">
         <section class = "skill">
             <div class="container">
                 <div class="card">
@@ -127,9 +129,125 @@
                 </div>
             </div>
         </section>
+        <hr size="1px" color = "white">
         <section class = "projects">
-            
+            <article class="article_project">
+                <div class="article_title_wrap">
+                  <span class="article_title">PROJECTS</span>
+                </div>
+        
+                <div class="project_container">
+                  <div class="project_img project_img1"></div>
+                  <div class="project_intro project_intro1">
+                    <div class="project_intro_title">
+                      <span class="highlight">01</span>주식 일기장
+                    </div>
+                    <div class="project_intro_text">
+                      <p>
+                        일기장을 기반으로 한 간편한 주식기록장 어플리케이션입니다.<br />
+                        차트 및 투자현황 확인을 구현했습니다.<br />
+                      </p>
+                      <p>
+                        <span>참여 인원</span>4 명<br />
+                        <span>개발 기간</span>2021.08.26 ~ 2021.08.28<br />
+                      </p>
+                      <p>
+                        <span class="highlight">Client</span>Java, Android Studio, Room API<br />
+                      </p>
+                        <div
+                          class="project_intro_button"
+                          onclick="github_on('stocker')"
+                        >
+                          Github 보기
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="project_container project_container2">
+                  <div class="project_img project_img2"></div>
+                  <div class="project_intro project_intro2">
+                    <div class="project_intro_title">
+                      <span class="highlight">02</span>실외 CCTV 폭력 인식 시스템
+                    </div>
+                    <div class="project_intro_text">
+                      <p>
+                        사람의 육안에 의존하는 현재 CCTV 관제 환경을 좀 더 사람이 편하게 개선한 관제 시스템입니다.<br />
+                        사람들이 사용하기 편하게 하기 위해 웹 환경을 이용합니다.<br />
+                      </p>
+                      <p>
+                        <span>참여 인원</span>3 명<br />
+                        <span>개발 기간</span>2021.03 ~ 2021.06<br />
+                      </p>
+                      <p>
+                        <span class="highlight">Client</span>Nunjucks, javascript<br />
+                        <span class="highlight">Server</span>javascript, NodeJS, Tensorflow, MySQL, OpenCV
+                        <br />
+                      </p>
+                      <div class="project_intro_button_box">
+                        <div
+                          class="project_intro_button"
+                          onclick="youtube_on('DQyG3o-RWzU')"
+                        >
+                          YouTube 보기
+                        </div>
+                        <div
+                          class="project_intro_button"
+                          onclick="github_on('Capstone')"
+                        >
+                          Github 보기
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!---<div class="project_container project_container3">
+                  <div class="project_img project_img3"></div>
+                  <div class="project_intro project_intro3">
+                    <div class="project_intro_title">
+                      <span class="highlight">03</span>RunRun!
+                    </div>
+                    <div class="project_intro_text">
+                      <p>
+                        미니게임 형식의 Toy Project입니다.<br />
+                        모바일에 최적화 되어있는 웹페이지입니다.<br />
+                        학원 동기들과 점심내기를 하기위해 만들었습니다.<br />
+                      </p>
+                      <p>
+                        <span>참여 인원</span>1 명<br />
+                        <span>개발 기간</span>19.04 ~ 19.05<br />
+                      </p>
+                      <p>
+                        <span class="highlight">Client</span>React, Sass<br />
+                        <span class="highlight">Server</span>heroku<br />
+                      </p>
+                      <div class="project_intro_button_box">
+                        <div
+                          class="project_intro_button"
+                          onclick="youtube_on('idJDuzoHI68')"
+                        >
+                          YouTube 보기
+                        </div>
+                        <div
+                          class="project_intro_button"
+                          onclick="github_on('RunRun-')"
+                        >
+                          Github 보기
+                        </div>
+                      </div>
+                      <div
+                        class="project_intro_button2"
+                        onclick="page_on('https://animalrun.netlify.com/')"
+                      >
+                        사이트로 이동
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            -->
+              </article>
         </section>
+        <hr size="1px" color = "white">
         <footer>
             <ul>
                 <li><a href="https://www.facebook.com/profile.php?id=100004452064267" target='_blank'><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -138,7 +256,12 @@
                 <li><a href="https://www.youtube.com/user/djbluefrog/videos" target='_blank'><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
             </ul>
         </footer>
+        <div class="modal" onclick="modal_off()">
+            <div class="modal_close"><i class="fa fa-times" aria-hidden="true"></i></div>
+            <div class="modal_youtube" id="player"></div>
+        </div>
         <script type="text/javascript" src="/vanilla-tilt.js"></script>
+        <script type="text/javascript" src="/index.js"></script>
         <script>
             VanillaTilt.init(document.querySelectorAll(".card"), {
                 max: 25,

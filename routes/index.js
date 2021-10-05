@@ -35,4 +35,25 @@ router.get('/linux', (req, res) => {
     });
 });
 
+router.get('/portfolio1', (req, res) => {
+    fs.readFile('./src/portfolio1.png', (err, data) => {
+        res.writeHead(200, {'Content-Type' : 'text/html'});
+        res.end(data);
+    });
+});
+
+router.get('/portfolio2', (req, res) => {
+    fs.readFile('./src/portfolio2.jpg', (err, data) => {
+        res.writeHead(200, {'Content-Type' : 'text/html'});
+        res.end(data);
+    });
+});
+
+router.get('/portfolio3', (req, res) => {
+    fs.readFile('./src/linux.png', (err, data) => {
+        res.writeHead(200, {'Content-Type' : 'text/html'});
+        res.end(data);
+    });
+});
+
 module.exports = router;

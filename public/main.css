@@ -246,6 +246,161 @@ header .title:last-child .dot
   font-weight: 300;
 }
 
+/* 각 article 당 타이틀 */
+.article_title_wrap {
+  box-sizing: initial;
+  -js-display: flex;
+  display: flex;
+  justify-content: center;
+  padding: 80px 0;
+  width: 100%;
+  height: max-content;
+  text-align: center;
+}
+
+.article_title {
+  position: relative;
+  /* -js-display: flex;
+    display: flex;
+    justify-content: center; */
+  width: max-content;
+  height: max-content;
+  font-size: 2em;
+  font-weight: 600;
+  color: #fff;
+}
+.article_title::before {
+  content: "";
+  position: absolute;
+  margin-left: 22.5%;
+  padding-left: 0;
+  left: 0;
+  width: 55%;
+  height: 130%;
+  border-bottom: 3px solid white;
+}
+
+/* project */
+.project {
+  -js-display: flex;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: column;
+  height: max-content;
+}
+
+.article_project {
+  -js-display: flex;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: column;
+  width: 100%;
+}
+.project_container {
+  position: relative;
+  -js-display: flex;
+  display: flex;
+  margin-bottom: 5%;
+  width: 100%;
+  color: #fff;
+}
+
+.project_container3 {
+  margin-bottom: 6%;
+}
+.project_img {
+  margin: 0 2%;
+  width: 50%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.3s ease-in-out;
+}
+.project_img1 {
+  background-image: url("/portfolio1");
+}
+
+.project_img2 {
+  background-image: url("/portfolio2");
+  order: 2;
+}
+.project_img3 {
+  background-image: url("/portfolio3");
+}
+
+.project_intro {
+  margin: 2%;
+  width: 50%;
+}
+.project_intro2 {
+  order: 1;
+}
+.project_intro_title {
+  padding: 0 5%;
+  width: 100%;
+  font-size: 2em;
+  font-weight: 500;
+  text-align: left;
+  letter-spacing: 0.05em;
+}
+.project_intro_title span {
+  font-size: 1.2em;
+  margin-right: 15px;
+  letter-spacing: 0;
+}
+.project_intro_text {
+  padding: 6% 5%;
+  width: 100%;
+  font-size: 1em;
+  font-weight: 300;
+}
+.project_intro_text p {
+  margin-bottom: 4%;
+  line-height: 1.5em;
+}
+.project_intro_text span {
+  margin-right: 10px;
+  font-weight: 500;
+}
+.project_intro_button_box {
+  -js-display: flex;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 7%;
+  width: 100%;
+  height: 50px;
+}
+.project_intro_button {
+  width: 48.5%;
+  line-height: 50px;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: 400;
+  cursor: pointer;
+  border: 1.5px solid #fe4a49;
+  transition: all 0.3s ease-in-out;
+}
+.project_intro_button:hover {
+  color: white;
+  background-color: #fe4a49;
+}
+.project_intro_button i {
+  font-size: 30px;
+}
+.project_intro_button2 {
+  margin-top: 3%;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: white;
+  background: #fe4a49;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
 /* footer */
 footer 
 {
@@ -325,4 +480,41 @@ footer ul li a::before
 footer ul li a::before:hover
 {
   transform: skewX(45deg) translateX(-150px);
+}
+
+/* Modal =================================================== */
+.modal {
+  position: fixed;
+  -js-display: flex;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10001;
+}
+.modal_close {
+  position: absolute;
+  margin: 20px;
+  width: 70px;
+  height: 70px;
+  top: 0;
+  right: 0;
+  font-size: 50px;
+  text-align: center;
+  color: lightgray;
+  cursor: pointer;
+  z-index: 10003;
+}
+.modal_close:hover {
+  color: #fe4a49;
+}
+.modal_youtube {
+  position: absolute;
+  width: 853px;
+  height: 480px;
+  background-color: black;
+  z-index: 10002;
 }
