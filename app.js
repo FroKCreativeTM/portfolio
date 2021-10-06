@@ -6,6 +6,7 @@ const cookieParter = require('cookie-parser');
 const session = require('express-session');
 const dotenv = require('dotenv');
 const passport = require('passport');
+const favicon = require('serve-favicon');
 
 dotenv.config();
 const indexRouter = require('./routes');
@@ -38,6 +39,8 @@ app.use(passport.session());
 
 app.use('/fa', express.static(__dirname + '/node_modules/font-awesome/css'));
 app.use('/fonts', express.static(__dirname + '/node_modules/font-awesome/fonts'));
+
+app.use(favicon(path.join(__dirname, 'favicon.ico')));
 
 app.use('/', indexRouter);
 
